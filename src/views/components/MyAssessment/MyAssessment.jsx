@@ -19,7 +19,7 @@ const MyAssessment = ({
     <>
       <div className="myAssessmentHeader">
         <h2>My Assessment</h2>
-        <div>
+        <div className="utilityIcons">
           <img src={SearchIcon} alt="search" />
           <img src={FilterIcon} alt="filter" />
           <img src={ChartsIcon} alt="charts" onClick={toggleShowMobileCharts} />

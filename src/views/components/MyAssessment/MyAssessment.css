@@ -4,6 +4,10 @@
   gap: 30px;
 }
 
+.utilityIcons {
+  display: none;
+}
+
 /* Responsiveness */
 @media screen and (max-width: 872px) {
   .myAssessment {
@@ -22,5 +26,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .utilityIcons {
+    display: block;
   }
 }
