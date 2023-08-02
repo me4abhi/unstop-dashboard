@@ -1,0 +1,29 @@
+.header-navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.header-navbar a {
+  line-height: 70px;
+  font-size: var(--font-md);
+  vertical-align: middle;
+}
+
+.header-navbar a:first-child {
+  color: var(--color-secondary, #0073e6);
+  border-bottom: 4px solid var(--color-secondary, #0073e6);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 550px) {
+  .header-navbar {
+    justify-content: center;
+    gap: 0;
+  }
+
+  .header-navbar a {
+    width: 50vw;
+    text-align: center;
+  }
+}

@@ -1,0 +1,23 @@
+.addNewCard {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background-color: #f6f8fa;
+  border-radius: 12px;
+}
+
+.addNewCard .titleWithIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.addNewCard .titleWithIcon img {
+  background-color: white;
+  padding: 20px;
+  border-radius: 50%;
+}

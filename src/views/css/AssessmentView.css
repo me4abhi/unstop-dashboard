@@ -1,0 +1,28 @@
+.assessment-view {
+  position: absolute;
+  width: 88%;
+  margin-top: 1rem;
+  margin-left: 11%;
+  padding: 1%;
+  background-color: var(--bg-container);
+  border-radius: 12px;
+}
+
+.assessment-container {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 550px) {
+  .assessment-view {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+}

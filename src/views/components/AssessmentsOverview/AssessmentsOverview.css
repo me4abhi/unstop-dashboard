@@ -1,0 +1,129 @@
+.assessment-overview-container {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+.assessment-overview-child {
+  padding: 16px 20px;
+}
+
+.assessment-overview-child:not(:first-child) {
+  border-left: 1px solid var(--color-border);
+}
+
+.aoc-1 {
+  order: 1;
+}
+.aoc-2 {
+  order: 2;
+}
+.aoc-3 {
+  order: 3;
+}
+.aoc-4 {
+  order: 4;
+}
+
+.ao-child-10 {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.ao-child-20 {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-bg {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  background-color: #ebe8fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.meta-main {
+  font-size: var(--font-lg);
+}
+.meta-extra {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: #05c165;
+}
+.meta-subtitle {
+  font-size: var(--font-sm);
+  font-weight: 500;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 872px) {
+  .assessment-overview-container {
+    overflow-x: visible;
+    flex-wrap: wrap;
+  }
+
+  .assessment-overview-child {
+    flex: 0 0 100%;
+  }
+
+  .assessment-overview-child:not(:first-child) {
+    width: 100%;
+  }
+
+  .assessment-overview-child {
+    padding: 10px 14px;
+  }
+
+  .aoc-2 {
+    order: 3;
+    border-top: 1px solid var(--color-border);
+  }
+  .aoc-3 {
+    order: 4;
+    border-top: 1px solid var(--color-border);
+  }
+  .aoc-4 {
+    order: 2;
+  }
+
+  .ao-child-10,
+  .ao-child-20 {
+    gap: 10px;
+  }
+
+  .assessment-overview-child:first-child,
+  .assessment-overview-child:last-child {
+    flex: 0 0 50%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .assessment-overview-title {
+    display: none;
+  }
+
+  .showCharts {
+    display: flex;
+  }
+
+  .hideCharts {
+    display: none;
+  }
+}
