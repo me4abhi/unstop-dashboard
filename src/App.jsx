@@ -14,9 +14,6 @@ function App() {
         showMobileMenu={showMobileMenu}
         setShowMobileMenu={setShowMobileMenu}
       />
-      {/* {showMobileMenu && (
-        <MobileSideMenu setShowMobileMenu={setShowMobileMenu} />
-      )} */}
       <AssessmentView
         showModal={showModal}
         setShowModal={setShowModal}

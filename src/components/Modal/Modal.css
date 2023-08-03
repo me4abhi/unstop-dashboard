@@ -12,16 +12,12 @@
   width: 30%;
   position: absolute;
   left: 50%;
-  top: 200%;
+  top: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   border: 1px solid #dadce0;
   border-radius: 8px;
   z-index: 1001;
-  transition: top 1s;
-}
-.show-modal {
-  top: 50%;
 }
 
 .modal-header {
@@ -45,10 +41,7 @@
 @media screen and (max-width: 550px) {
   .modal-container {
     width: 100%;
-    position: absolute;
-    left: 0;
     top: 25%;
-    bottom: 0%;
-    transform: translate(0%, 0%);
+    bottom: 0;
   }
 }

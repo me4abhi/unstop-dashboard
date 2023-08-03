@@ -1,6 +1,6 @@
+import PropTypes from "prop-types";
 import Form from "../components/Form/Form";
 import Modal from "../components/Modal/Modal";
-import PropTypes from "prop-types";
 
 const ModalView = ({ showModal, setShowModal }) => {
   const handleCloseModal = () => {

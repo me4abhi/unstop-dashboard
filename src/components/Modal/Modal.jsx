@@ -3,17 +3,32 @@ import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import Cross from "../../assets/icons/cross.svg";
 import DividerX from "../Divider/DividerX";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "@react-hook/media-query";
+
+const useMobileAnimation = () => {
+  const isMobile = useMediaQuery("(max-width: 550px)"); // Adjust the breakpoint as needed
+
+  return isMobile
+    ? { x: "-50%", y: "0%", opacity: 1 }
+    : { x: "-50%", y: "-50%", opacity: 1 };
+};
 
 const Modal = ({ modalOpen, onClose, children }) => {
+  const animationValue = useMobileAnimation();
+
   if (!modalOpen) {
     return null;
   }
 
   return ReactDOM.createPortal(
     <div className="modal-overlay">
-      <div
-        className={modalOpen ? "modal-container show-modal" : "modal-container"}
-        // style={{ top: modalOpen ? "50%" : "200%" }}
+      <motion.div
+        initial={{ x: "-50%", y: "100%", opacity: 0 }}
+        animate={animationValue}
+        exit={{ x: "-50%", y: "100%", opacity: 0 }}
+        transition={{ delay: 0, type: "tween", duration: 1 }}
+        className="modal-container"
       >
         <div className="modal-header">
           <h1>Create new assessment</h1>
@@ -28,7 +43,7 @@ const Modal = ({ modalOpen, onClose, children }) => {
         <div className="modal-content">
           <div className="modal-body">{children}</div>
         </div>
-      </div>
+      </motion.div>
     </div>,
     document.getElementById("modal-root") // Render the modal outside the main DOM hierarchy
   );
