@@ -1,4 +1,5 @@
 import "./Sidebar.css";
+import { useMediaQuery } from "@react-hook/media-query";
 import PropTypes from "prop-types";
 import Cross from "../../assets/icons/cross.svg";
 import DashboardIcon from "../../assets/icons/dashboard.svg";
@@ -10,6 +11,8 @@ import TextPillWithIcon from "../../components/TextPillWithIcon/TextPillWithIcon
 import DividerX from "../../components/Divider/DividerX";
 
 const Sidebar = ({ showMobileMenu, setShowMobileMenu }) => {
+  const isMobile = useMediaQuery("(max-width: 550px)");
+
   const sidebarIcons = [
     {
       id: 1,
@@ -24,7 +27,7 @@ const Sidebar = ({ showMobileMenu, setShowMobileMenu }) => {
     <div
       className={showMobileMenu ? "sidebar showSidebar" : "sidebar hideSidebar"}
     >
-      {showMobileMenu && (
+      {isMobile && (
         <div className="sidebarMobileHeader">
           <h2>Menu</h2>
           <img
