@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Form from "../components/Form/Form";
 import Modal from "../components/Modal/Modal";
+import { AnimatePresence } from "framer-motion";
 
 const ModalView = ({ showModal, setShowModal }) => {
   const handleCloseModal = () => {
@@ -8,9 +9,13 @@ const ModalView = ({ showModal, setShowModal }) => {
   };
 
   return (
-    <Modal modalOpen={showModal} onClose={handleCloseModal}>
-      <Form />
-    </Modal>
+    <AnimatePresence>
+      {showModal && (
+        <Modal modalOpen={showModal} onClose={handleCloseModal}>
+          <Form />
+        </Modal>
+      )}
+    </AnimatePresence>
   );
 };
 

@@ -14,19 +14,15 @@ const useMobileAnimation = () => {
     : { x: "-50%", y: "-50%", opacity: 1 };
 };
 
-const Modal = ({ modalOpen, onClose, children }) => {
+const Modal = ({ onClose, children }) => {
   const animationValue = useMobileAnimation();
 
-  if (!modalOpen) {
-    return null;
-  }
-
   return ReactDOM.createPortal(
-    <div className="modal-overlay">
+    <div className="modal-overlay" onClick={onClose}>
       <motion.div
-        initial={{ x: "-50%", y: "100%", opacity: 0 }}
+        initial={{ x: "-50%", y: "100%" }}
         animate={animationValue}
-        exit={{ x: "-50%", y: "100%", opacity: 0 }}
+        exit={{ x: "-50%", y: "100%" }}
         transition={{ delay: 0, type: "tween", duration: 1 }}
         className="modal-container"
       >

@@ -19,9 +19,9 @@ function App() {
         setShowModal={setShowModal}
         setShowMobileMenu={setShowMobileMenu}
       />
-      {showModal && (
-        <ModalView showModal={showModal} setShowModal={setShowModal} />
-      )}
+      {/* {showModal && ( */}
+      <ModalView showModal={showModal} setShowModal={setShowModal} />
+      {/* )} */}
     </>
   );
 }
