@@ -1,4 +1,6 @@
 import "./AssessmentsOverview.css";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "@react-hook/media-query";
 import PropTypes from "prop-types";
 import TotalAssessment from "../../../assets/icons/total_assessment.svg";
 import Candidates from "../../../assets/icons/candidates.svg";
@@ -7,68 +9,80 @@ import TotalPurpose from "../../../assets/icons/total_purpose.svg";
 import DividerY from "../../../components/Divider/DividerY";
 
 const AssessmentsOverview = ({ showMobileCharts }) => {
+  const isMobile = useMediaQuery("(max-width: 550px)");
+
   return (
     <>
       <h2 className="assessment-overview-title">Assessments Overview</h2>
-      <div
-        className={
-          showMobileCharts
-            ? "assessment-overview-container showCharts"
-            : "assessment-overview-container hideCharts"
-        }
+      <motion.div
+        initial={{
+          height: isMobile ? 0 : "auto",
+          opacity: isMobile ? 0 : 1,
+        }}
+        animate={{
+          height: isMobile ? (showMobileCharts ? "auto" : 0) : "auto",
+          opacity: isMobile ? (showMobileCharts ? 1 : 0) : 1,
+        }}
+        exit={{ height: isMobile ? 0 : "auto", opacity: isMobile ? 0 : 1 }}
+        transition={{ duration: isMobile ? 0.5 : 0, ease: "easeInOut" }}
+        style={{
+          overflow: isMobile ? "hidden" : "auto",
+        }}
       >
-        <div className="assessment-overview-child aoc-1">
-          <h3>Total Assessment</h3>
-          <TotalDesign icon={TotalAssessment} text="34" />
-        </div>
+        <div className="assessment-overview-container">
+          <div className="assessment-overview-child aoc-1">
+            <h3>Total Assessment</h3>
+            <TotalDesign icon={TotalAssessment} text="34" />
+          </div>
 
-        <div className="assessment-overview-child aoc-2">
-          <h3>Candidates</h3>
-          <div className="ao-child-20">
-            <AoIcon icon={Candidates} />
-            <AoMetaInfo
-              metaMain="11,145"
-              metaExtra="+89"
-              metaSubtitle="Total Candidate"
-            />
-            <DividerY length="50px" />
-            <AoMetaInfo
-              metaMain="114"
-              metaExtra="+89"
-              metaSubtitle="Who Attempted"
-            />
+          <div className="assessment-overview-child aoc-2">
+            <h3>Candidates</h3>
+            <div className="ao-child-20">
+              <AoIcon icon={Candidates} />
+              <AoMetaInfo
+                metaMain="11,145"
+                metaExtra="+89"
+                metaSubtitle="Total Candidate"
+              />
+              <DividerY length="50px" />
+              <AoMetaInfo
+                metaMain="114"
+                metaExtra="+89"
+                metaSubtitle="Who Attempted"
+              />
+            </div>
+          </div>
+
+          <div className="assessment-overview-child aoc-3">
+            <h3>Candidates Source</h3>
+            <div className="ao-child-20">
+              <AoIcon icon={CandidatesSource} />
+              <AoMetaInfo
+                metaMain="11,000"
+                metaExtra="+89"
+                metaSubtitle="Email"
+              />
+              <DividerY length="50px" />
+              <AoMetaInfo
+                metaMain="145"
+                metaExtra="+89"
+                metaSubtitle="Social Share"
+              />
+              <DividerY length="50px" />
+              <AoMetaInfo
+                metaMain="145"
+                metaExtra="+89"
+                metaSubtitle="Unique Link"
+              />
+            </div>
+          </div>
+
+          <div className="assessment-overview-child aoc-4">
+            <h3>Total Purpose</h3>
+            <TotalDesign icon={TotalPurpose} text="11" />
           </div>
         </div>
-
-        <div className="assessment-overview-child aoc-3">
-          <h3>Candidates Source</h3>
-          <div className="ao-child-20">
-            <AoIcon icon={CandidatesSource} />
-            <AoMetaInfo
-              metaMain="11,000"
-              metaExtra="+89"
-              metaSubtitle="Email"
-            />
-            <DividerY length="50px" />
-            <AoMetaInfo
-              metaMain="145"
-              metaExtra="+89"
-              metaSubtitle="Social Share"
-            />
-            <DividerY length="50px" />
-            <AoMetaInfo
-              metaMain="145"
-              metaExtra="+89"
-              metaSubtitle="Unique Link"
-            />
-          </div>
-        </div>
-
-        <div className="assessment-overview-child aoc-4">
-          <h3>Total Purpose</h3>
-          <TotalDesign icon={TotalPurpose} text="11" />
-        </div>
-      </div>
+      </motion.div>
     </>
   );
 };

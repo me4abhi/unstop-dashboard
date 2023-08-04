@@ -1,5 +1,6 @@
 .assessment-overview-container {
   width: 100%;
+  height: auto;
   border: 1px solid var(--color-border);
   border-radius: 12px;
   display: flex;
@@ -7,6 +8,7 @@
   justify-content: space-between;
   white-space: nowrap;
   overflow-x: scroll;
+  transition: 1s;
 }
 
 .assessment-overview-child {
@@ -116,14 +118,6 @@
 
 @media screen and (max-width: 550px) {
   .assessment-overview-title {
-    display: none;
-  }
-
-  .showCharts {
-    display: flex;
-  }
-
-  .hideCharts {
     display: none;
   }
 }

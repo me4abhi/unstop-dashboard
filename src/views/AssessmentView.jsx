@@ -62,11 +62,15 @@ const AssessmentView = ({ setShowModal, setShowMobileMenu }) => {
         navbarItems={assessmentNav}
         setShowMobileMenu={setShowMobileMenu}
       />
-      <div className="assessment-container">
+      <div
+        className="assessment-container"
+        style={{ paddingTop: showMobileCharts ? "20px" : 0 }}
+      >
         <AssessmentsOverview
           showMobileCharts={showMobileCharts}
           setShowMobileCharts={setShowMobileCharts}
         />
+
         <MyAssessment
           assessmentCardsData={myAssessment}
           setShowModal={setShowModal}

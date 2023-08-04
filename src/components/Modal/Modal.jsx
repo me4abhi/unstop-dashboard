@@ -18,7 +18,7 @@ const Modal = ({ onClose, children }) => {
   const animationValue = useMobileAnimation();
 
   return ReactDOM.createPortal(
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay">
       <motion.div
         initial={{ x: "-50%", y: "100%" }}
         animate={animationValue}

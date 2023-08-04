@@ -15,6 +15,7 @@
   align-items: flex-start;
   gap: 24px;
   align-self: stretch;
+  transition: 1s;
 }
 
 /* Responsiveness */
@@ -25,4 +26,8 @@
     padding: 0;
     border-radius: 0;
   }
+
+  /* .assessment-container {
+    gap: 0;
+  } */
 }
