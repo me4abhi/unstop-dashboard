@@ -2,6 +2,8 @@
 
 ### `File Structure`
 
+`screenshots/` Contains screenshots of app at different screen sizes
+
 src/
 |-- assets/
 |-- |-- icons/

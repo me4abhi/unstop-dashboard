@@ -1,6 +1,7 @@
 import "./css/AssessmentView.css";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { useMediaQuery } from "@react-hook/media-query";
 import Header from "../layouts/Header/Header";
 import AssessmentsOverview from "./components/AssessmentsOverview/AssessmentsOverview";
 import MyAssessment from "./components/MyAssessment/MyAssessment";
@@ -14,6 +15,9 @@ import MyAssessment from "./components/MyAssessment/MyAssessment";
 const AssessmentView = ({ setShowModal, setShowMobileMenu }) => {
   // state => show/hide [mobile-device]-dataChart
   const [showMobileCharts, setShowMobileCharts] = useState(false);
+
+  // setting device-type => mobile || not_mobile
+  const isMobile = useMediaQuery("(max-width: 550px)");
 
   // assessment-view => header/navigation_items
   const assessmentNav = [
@@ -73,9 +77,12 @@ const AssessmentView = ({ setShowModal, setShowMobileMenu }) => {
       />
       <div
         className="assessment-container"
-        style={{ paddingTop: showMobileCharts ? "20px" : 0 }}
+        style={{
+          paddingTop: isMobile ? (showMobileCharts ? "20px" : 0) : "20px",
+        }}
       >
         <AssessmentsOverview
+          isMobile={isMobile}
           showMobileCharts={showMobileCharts}
           setShowMobileCharts={setShowMobileCharts}
         />

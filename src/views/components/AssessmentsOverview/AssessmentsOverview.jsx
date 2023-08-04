@@ -1,6 +1,5 @@
 import "./AssessmentsOverview.css";
 import { motion } from "framer-motion";
-import { useMediaQuery } from "@react-hook/media-query";
 import PropTypes from "prop-types";
 import TotalAssessment from "../../../assets/icons/total_assessment.svg";
 import Candidates from "../../../assets/icons/candidates.svg";
@@ -15,12 +14,11 @@ import DividerY from "../../../components/Divider/DividerY";
     3) AoMetaInfo
 */
 
-const AssessmentsOverview = ({ showMobileCharts }) => {
-  const isMobile = useMediaQuery("(max-width: 550px)");
-
+const AssessmentsOverview = ({ isMobile, showMobileCharts }) => {
   return (
     <>
       <h2 className="assessment-overview-title">Assessments Overview</h2>
+
       {/* conditional animation/styling for mobile-devices */}
       <motion.div
         initial={{
@@ -36,6 +34,7 @@ const AssessmentsOverview = ({ showMobileCharts }) => {
         style={{
           overflow: isMobile ? "hidden" : "auto",
         }}
+        className="assessment-overview-wrapper"
       >
         <div className="assessment-overview-container">
           <div className="assessment-overview-child aoc-1">
@@ -96,6 +95,7 @@ const AssessmentsOverview = ({ showMobileCharts }) => {
 };
 
 AssessmentsOverview.propTypes = {
+  isMobile: PropTypes.bool,
   showMobileCharts: PropTypes.bool,
 };
 
