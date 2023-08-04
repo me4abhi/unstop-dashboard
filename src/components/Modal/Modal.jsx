@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useMediaQuery } from "@react-hook/media-query";
 
 const useMobileAnimation = () => {
-  const isMobile = useMediaQuery("(max-width: 550px)"); // Adjust the breakpoint as needed
+  const isMobile = useMediaQuery("(max-width: 550px)");
 
   return isMobile
     ? { x: "-50%", y: "0%", opacity: 1 }

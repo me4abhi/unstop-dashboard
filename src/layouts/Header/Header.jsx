@@ -7,6 +7,7 @@ import HeaderNavbar from "../../components/HeaderNavbar/HeaderNavbar";
 const Header = ({ navbarItems, setShowMobileMenu }) => {
   return (
     <div className="header">
+      {/* header => menu-icon, page-title */}
       <div className="headerMain">
         <img
           src={Hamburger}
@@ -16,7 +17,8 @@ const Header = ({ navbarItems, setShowMobileMenu }) => {
         <h1>Assessment</h1>
       </div>
       <DividerY length="80%" thickness="1px" color="#bacbd5" />
-      <HeaderNavbar className="headerNavbarMobile" headerNavItems={navbarItems} />
+      {/* header => navigation-menu */}
+      <HeaderNavbar className="headerNavbar" headerNavItems={navbarItems} />
     </div>
   );
 };

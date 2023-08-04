@@ -11,6 +11,7 @@ const MyAssessment = ({
   setShowModal,
   setShowMobileCharts,
 }) => {
+  // function => toggle assessment-chart view on mobile-device
   const toggleShowMobileCharts = () => {
     setShowMobileCharts((prev) => !prev);
   };
@@ -34,6 +35,7 @@ const MyAssessment = ({
           setShowModal={setShowModal}
         />
 
+        {/* adding assessment-cards only when existing  */}
         {assessmentCardsData &&
           assessmentCardsData.map((assessment) => (
             <AssessmentCard

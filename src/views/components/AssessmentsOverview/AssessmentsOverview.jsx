@@ -8,12 +8,20 @@ import CandidatesSource from "../../../assets/icons/candidate_source.svg";
 import TotalPurpose from "../../../assets/icons/total_purpose.svg";
 import DividerY from "../../../components/Divider/DividerY";
 
+/*
+  In-file reusable components (defined at the bottom of file):
+    1) TotalDesign
+    2) AoIcon
+    3) AoMetaInfo
+*/
+
 const AssessmentsOverview = ({ showMobileCharts }) => {
   const isMobile = useMediaQuery("(max-width: 550px)");
 
   return (
     <>
       <h2 className="assessment-overview-title">Assessments Overview</h2>
+      {/* conditional animation/styling for mobile-devices */}
       <motion.div
         initial={{
           height: isMobile ? 0 : "auto",

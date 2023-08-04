@@ -1,8 +1,30 @@
-# React + Vite
+# UNSTOP ASSESSMENT PAGE DESIGN
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### `File Structure`
 
-Currently, two official plugins are available:
+src/
+|-- assets/
+|-- |-- icons/
+|-- components/
+|-- |-- ...
+|-- layouts/
+|-- |-- Header
+|-- |-- Sidebar
+|-- views/
+|-- |-- components
+|-- |-- |-- AssessmentsOverview
+|-- |-- |-- MyAssessment
+|-- |-- css
+|-- |-- |-- {css files for "views/_.jsx"}
+|-- |-- _.jsx
+|-- App.js
+|-- index.css
+|-- main.js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+`assets` Contains static assets like images and icons used throughout the app.
+`components` Contains reusable/shared components used across the app.
+`layouts` Contains components that define the layout of the app
+`views` Contains top-level components that represent different pages or views in the app. Also contains sub-top level components.
+`App.js` The root component that sets up global configurations and component display/routing.
+`index.css` Global CSS styles.
+`main.js` The entry point of the application.

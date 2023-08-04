@@ -4,14 +4,11 @@ import Modal from "../components/Modal/Modal";
 import { AnimatePresence } from "framer-motion";
 
 const ModalView = ({ showModal, setShowModal }) => {
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
   return (
     <AnimatePresence>
+      {/* conditionally rendering modal component */}
       {showModal && (
-        <Modal modalOpen={showModal} onClose={handleCloseModal}>
+        <Modal modalOpen={showModal} onClose={() => setShowModal(false)}>
           <Form />
         </Modal>
       )}

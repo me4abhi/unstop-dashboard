@@ -1,13 +1,21 @@
 import "./css/AssessmentView.css";
+import PropTypes from "prop-types";
+import { useState } from "react";
 import Header from "../layouts/Header/Header";
 import AssessmentsOverview from "./components/AssessmentsOverview/AssessmentsOverview";
 import MyAssessment from "./components/MyAssessment/MyAssessment";
-import PropTypes from "prop-types";
-import { useState } from "react";
+
+/*
+  Sub-Components:
+    1. AssessmentOverview
+    2. MyAssessment
+*/
 
 const AssessmentView = ({ setShowModal, setShowMobileMenu }) => {
+  // state => show/hide [mobile-device]-dataChart
   const [showMobileCharts, setShowMobileCharts] = useState(false);
 
+  // assessment-view => header/navigation_items
   const assessmentNav = [
     {
       id: 1,
@@ -21,6 +29,7 @@ const AssessmentView = ({ setShowModal, setShowMobileMenu }) => {
     },
   ];
 
+  // [component]-MyAssessment =>  existing assessment cards data
   const myAssessment = [
     {
       id: 1,

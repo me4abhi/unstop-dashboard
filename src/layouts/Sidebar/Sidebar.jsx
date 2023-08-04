@@ -13,6 +13,7 @@ import DividerX from "../../components/Divider/DividerX";
 const Sidebar = ({ showMobileMenu, setShowMobileMenu }) => {
   const isMobile = useMediaQuery("(max-width: 550px)");
 
+  // sidebar-navigation-menu items
   const sidebarIcons = [
     {
       id: 1,
@@ -24,6 +25,7 @@ const Sidebar = ({ showMobileMenu, setShowMobileMenu }) => {
   ];
 
   return (
+    // conditionally styling sidebar-menu according to device-type
     <div
       className={showMobileMenu ? "sidebar showSidebar" : "sidebar hideSidebar"}
     >
