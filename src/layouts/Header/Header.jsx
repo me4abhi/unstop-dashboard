@@ -16,7 +16,7 @@ const Header = ({ navbarItems, setShowMobileMenu }) => {
         <h1>Assessment</h1>
       </div>
       <DividerY length="80%" thickness="1px" color="#bacbd5" />
-      <HeaderNavbar headerNavItems={navbarItems} />
+      <HeaderNavbar className="headerNavbarMobile" headerNavItems={navbarItems} />
     </div>
   );
 };

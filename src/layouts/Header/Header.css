@@ -1,7 +1,6 @@
 .header {
   height: 70px;
   font-weight: 600;
-  padding: 0 15px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -10,6 +9,7 @@
 }
 
 .headerMain {
+  padding: 0 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
