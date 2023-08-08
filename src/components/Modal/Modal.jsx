@@ -10,7 +10,7 @@ const useMobileAnimation = () => {
   const isMobile = useMediaQuery("(max-width: 550px)");
 
   return isMobile
-    ? { x: "-50%", y: "0%", opacity: 1 }
+    ? { x: "-50%", y: "0", opacity: 1 }
     : { x: "-50%", y: "-50%", opacity: 1 };
 };
 
@@ -36,9 +36,7 @@ const Modal = ({ onClose, children }) => {
           />
         </div>
         <DividerX length="100%" />
-        <div className="modal-content">
-          <div className="modal-body">{children}</div>
-        </div>
+        <div className="modal-content">{children}</div>
       </motion.div>
     </div>,
     document.getElementById("modal-root") // Render the modal outside the main DOM hierarchy
